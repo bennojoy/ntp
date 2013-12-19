@@ -1,17 +1,19 @@
 ntp
 ========
 
-This Role enables users to Install and configure ntp on thier hosts
+This role enables users to install and configure ntp on their hosts.
 
 Requirements
 ------------
 
-This role requires ansible 1.4 or higher and platform requirements are listed in the metadata file
+This role requires Ansible 1.4 or higher, and platform requirements are listed
+in the metadata file.
 
 Role Variables
 --------------
 
-The variables that can be passed to this role and a brief description about them are as follows:
+The variables that can be passed to this role and a brief description about
+them are as follows:
 
 ```
 driftfile: /var/lib/ntp/drifta                                      # The driftfile
@@ -35,7 +37,7 @@ multicastclient: no                                                 # Function a
 
 - Examples
 
-1) Install ntp set the default settings.
+1) Install ntp and set the default settings.
 
 ```
 - hosts: all
@@ -43,7 +45,7 @@ multicastclient: no                                                 # Function a
     - role: ntp
 ```
 
-2) Install ntp and send down some custom servers
+2) Install ntp and set some custom servers.
 
 ```
 
