@@ -16,26 +16,26 @@ The variables that can be passed to this role and a brief description about
 them are as follows. See the NTP configuration documentation for details:
 
 	# The driftfile
-	driftfile: /var/lib/ntp/drifta
+	ntp_driftfile: /var/lib/ntp/drifta
 
 	# The server to sync time with
-	server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
+	ntp_server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
 
-	restrict:                                                           
+	ntp_restrict:                                                           
 	  - "restrict -4 default kod notrap nomodify nopeer noquery"
 	  - "restrict -6 default kod notrap nomodify nopeer noquery"
 	  - "restrict 127.0.0.1"
 
-	crypto: no
-	includefile: no
-	keys: no
-	trustedkey: no
-	requestkey: no
-	controlkey: no
-	statistics: no
-	broadcast: no
-	broadcastclient: no
-	multicastclient: no
+	ntp_crypto: no
+	ntp_includefile: no
+	ntp_keys: no
+	ntp_trustedkey: no
+	ntp_requestkey: no
+	ntp_controlkey: no
+	ntp_statistics: no
+	ntp_broadcast: no
+	ntp_broadcastclient: no
+	ntp_multicastclient: no
 
 Examples
 --------
@@ -51,7 +51,7 @@ Examples
 	- hosts: all
 	  roles:
 	    - role: ntp
-	      server: [2.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
+	      ntp_server: [2.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
 
 Dependencies
 ------------
