@@ -1,59 +1,57 @@
 ntp
-========
+===
 
-This Role enables users to Install and configure ntp on thier hosts
+This role enables users to install and configure ntp on their hosts.
 
 Requirements
 ------------
 
-This role requires ansible 1.4 or higher and platform requirements are listed in the metadata file
+This role requires Ansible 1.4 or higher, and platform requirements are listed
+in the metadata file.
 
 Role Variables
 --------------
 
-The variables that can be passed to this role and a brief description about them are as follows:
+The variables that can be passed to this role and a brief description about
+them are as follows. See the NTP configuration documentation for details:
 
-```
-driftfile: /var/lib/ntp/drifta                                      # The driftfile
-server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]              # The server to sync time with
-restrict:                                                           # List of restrict's for ntp daemon
-  - "restrict -4 default kod notrap nomodify nopeer noquery"
-  - "restrict -6 default kod notrap nomodify nopeer noquery"
-  - "restrict 127.0.0.1"
+	# The driftfile
+	driftfile: /var/lib/ntp/drifta
 
-crypto: no                                                          #Use cryptography
-includefile: no                                                     #To use includefiles or not
-keys: no                                                            #The keys to be used incase crypto is enabled
-trustedkey: no
-requestkey: no
-controlkey: no
-statistics: no
-broadcast: no                                                       #Broadcast the time in network
-broadcastclient: no                                                 #Function as a broadcast client
-multicastclient: no                                                 # Function as multicast client
-```
+	# The server to sync time with
+	server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
 
-- Examples
+	restrict:                                                           
+	  - "restrict -4 default kod notrap nomodify nopeer noquery"
+	  - "restrict -6 default kod notrap nomodify nopeer noquery"
+	  - "restrict 127.0.0.1"
 
-1) Install ntp set the default settings.
+	crypto: no
+	includefile: no
+	keys: no
+	trustedkey: no
+	requestkey: no
+	controlkey: no
+	statistics: no
+	broadcast: no
+	broadcastclient: no
+	multicastclient: no
 
-```
-- hosts: all
-  roles:
-    - role: ntp
-```
+Examples
+--------
 
-2) Install ntp and send down some custom servers
+1) Install ntp and set the default settings.
 
-```
+	- hosts: all
+	  roles:
+	    - role: ntp
 
-- hosts: all
-  roles:
-    - role: ntp
-      server: [2.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
+2) Install ntp and set some custom servers.
 
-```
-
+	- hosts: all
+	  roles:
+	    - role: ntp
+	      server: [2.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
 
 Dependencies
 ------------
