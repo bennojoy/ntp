@@ -6,7 +6,7 @@ server {{ i }}
 {% endfor %}
 
 {% for i in ntp_restrict %}
-restrict {{ i }}
+{{ i }}
 {% endfor %}
 
 {% if ntp_crypto %}
