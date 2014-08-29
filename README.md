@@ -21,7 +21,7 @@ them are as follows. See the NTP configuration documentation for details:
 	# The server to sync time with
 	ntp_server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
 
-	ntp_restrict:                                                           
+	ntp_restrict:
 	  - "restrict -4 default kod notrap nomodify nopeer noquery"
 	  - "restrict -6 default kod notrap nomodify nopeer noquery"
 	  - "restrict 127.0.0.1"
@@ -36,6 +36,7 @@ them are as follows. See the NTP configuration documentation for details:
 	ntp_broadcast: no
 	ntp_broadcastclient: no
 	ntp_multicastclient: no
+  ntp_cache_valid_time: 86400
 
 Examples
 --------

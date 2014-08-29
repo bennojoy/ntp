@@ -17,3 +17,4 @@ ntp_statistics: no
 ntp_broadcast: no 
 ntp_broadcastclient: no         
 ntp_multicastclient: no
+ntp_cache_valid_time: 86400
