@@ -43,8 +43,12 @@ broadcast {{ ntp_broadcast }}
 
 {% if ntp_broadcastclient %}
 broadcastclient
-{% endif %}   
+{% endif %}
 
 {% if ntp_multicastclient %}
 multicastclient {{ ntp_multicastclient }}
-{% endif %}   
+{% endif %}
+
+{% if ntp_tinker %}
+tinker {{ ntp_tinker }}
+{% endif %}
