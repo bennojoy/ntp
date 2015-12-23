@@ -9,9 +9,9 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install the required packages in Debian derivatives
-  apt: name={{ item }} state=installed update_cache=yes
+  apt: name={{ item }} state=installed
   with_items: ntp_pkgs
-  environment: env
+  environment: "{{ env }}"
   when: ansible_os_family == 'Debian'
 
 - name: Copy the ntp.conf template file
