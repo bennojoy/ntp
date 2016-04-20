@@ -5,12 +5,12 @@
 
 - name: Install the required  packages in Redhat derivatives
   yum: name={{ item }} state=installed
-  with_items: ntp_pkgs
+  with_items: '{{ ntp_pkgs }}'
   when: ansible_os_family == 'RedHat'
 
 - name: Install the required packages in Debian derivatives
   apt: name={{ item }} state=installed update_cache=yes
-  with_items: ntp_pkgs
+  with_items: '{{ ntp_pkgs }}'
   environment: env
   when: ansible_os_family == 'Debian'
 
@@ -18,5 +18,3 @@
   template: src=ntp.conf.j2 dest=/etc/ntp.conf
   notify: 
    - restart ntp
-
- 
