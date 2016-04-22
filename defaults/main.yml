@@ -14,6 +14,7 @@ ntp_trustedkey: no
 ntp_requestkey: no
 ntp_controlkey: no
 ntp_statistics: no
-ntp_broadcast: no 
-ntp_broadcastclient: no         
+ntp_broadcast: no
+ntp_broadcastclient: no
 ntp_multicastclient: no
+ntp_tinker: no
